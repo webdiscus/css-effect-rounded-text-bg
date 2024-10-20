@@ -6,21 +6,24 @@
 }
 
 .container {
+  display: flex;
+  align-items: flex-end;
+  width: 647px;
+  height: 421px;
   background-image: url(../images/image.webp);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 647px;
-  height: 421px;
   border-radius: var(--text-bg-radius);
-
-  display: flex;
-  align-items: flex-end;
 }
 
 .container .title {
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 50px;
   line-height: 50px;
+}
+
+.container .title .text-bg-round {
+  padding: 5px 40px 5px 5px;
 }
 
 .container .sub-title {
@@ -33,7 +36,6 @@
 .text-bg-round {
   position: relative;
   width: fit-content;
-  padding: 5px 40px 5px 5px;
   border-top-right-radius: var(--text-bg-radius);
   background-color: var(--text-bg-color);
 }
@@ -42,21 +44,19 @@
 .text-bg-round::after {
   content: ' ';
   position: absolute;
-  width: calc(var(--text-bg-radius) * 2);
-  height: calc(var(--text-bg-radius) * 2);
-  background: radial-gradient(circle var(--text-bg-radius) at top right, #0000 95%, var(--text-bg-color)) no-repeat top
-    right;
-  background-size: 50% 50%;
+  width: var(--text-bg-radius);
+  height: var(--text-bg-radius);
+  background: radial-gradient(circle var(--text-bg-radius) at top right, #0000 95%, var(--text-bg-color)) no-repeat bottom left;
 }
 
 .text-bg-round:first-of-type::before {
-  left: calc(var(--text-bg-radius) * -1);
+  left: 0;
   top: calc(var(--text-bg-radius) * -1);
 }
 
 .text-bg-round::after {
   right: calc(var(--text-bg-radius) * -1);
-  bottom: calc(var(--text-bg-radius) * -1);
+  bottom: 0;
 }
 
 /** Misc styles */
